@@ -1,34 +1,35 @@
-import Topbar from "./components/topbar/Topbar";
-import Homepage from "./pages/homepage/Homepage";
-import Login from "./pages/login/Login";
-import Register from "./pages/register/Register";
-import Settings from "./pages/settings/Settings";
-import Single from "./pages/single/Single";
-import Write from "./pages/write/Write";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import React from 'react';
+import Topbar from './Components/Topbar'
+import Homepage from './Pages/Homepage'
+import Login from "./Pages/Login";
+import Register from "./Pages/Register";
+import Settings from "./Pages/Settings";
+import Single from "./Pages/Single";
+import Write from "./Pages/Write";
+import { BrowserRouter as Router, Routes, Route, } from "react-router-dom";
 
 function App() {
   const currentUser = true;
   return (
     <Router>
       <Topbar />
-      <Switch>
+      <Routes>
         <Route exact path="/">
           <Homepage />
         </Route>
-        <Route path="/posts">
+        <Route path="/Posts">
           <Homepage />
         </Route>
-        <Route path="/register">
+        <Route path="/Register">
           {currentUser ? <Homepage /> : <Register />}
         </Route>
-        <Route path="/login">{currentUser ? <Homepage /> : <Login />}</Route>
-        <Route path="/post/:id">
+        <Route path="/Login">{currentUser ? <Homepage /> : <Login />}</Route>
+        <Route path="/Post/:id">
           <Single />
         </Route>
-        <Route path="/write">{currentUser ? <Write /> : <Login />}</Route>
-        <Route path="/settings">{currentUser ? <Settings /> : <Login />}</Route>
-      </Switch>
+        <Route path="/Write">{currentUser ? <Write /> : <Login />}</Route>
+        <Route path="/ettings">{currentUser ? <Settings /> : <Login />}</Route>
+      </Routes>
     </Router>
   );
 }

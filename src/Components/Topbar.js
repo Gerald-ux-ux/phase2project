@@ -1,4 +1,3 @@
-
 import React from 'react'
 import './Topbar.css'
 
@@ -13,40 +12,40 @@ const Topbar = () => {
        <div className="topCenter">
         <ul className="topList">
           <li className="topListItem">
-            <Link className="link" to="/">
+            <a className="link" to="/">
               HOME
-            </Link>
+            </a>
           </li>
           <li className="topListItem">ABOUT</li>
           <li className="topListItem">CONTACT</li>
           <li className="topListItem">
-            <Link className="link" to="/write">
+            <a className="link" to="/Write">
               WRITE
-            </Link>
+            </a>
           </li>
           {user && <li className="topListItem">LOGOUT</li>}
         </ul>
       </div>
       <div className="topRight">
         {user ? (
-          <Link className="link" to="/settings">
+          <a className="link" to="/Settings">
             <img
               className="topImg"
               src="https://images.pexels.com/photos/1858175/pexels-photo-1858175.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
               alt=""
             />
-          </Link>
+          </a>
         ) : (
           <ul className="topList">
             <li className="topListItem">
-              <Link className="link" to="/login">
+              <a className="link" to="/Login">
                 LOGIN
-              </Link>
+              </a>
             </li>
             <li className="topListItem">
-              <Link className="link" to="/register">
+              <a className="link" to="/Register">
                 REGISTER
-              </Link>
+              </a>
             </li>
           </ul>
         )}
