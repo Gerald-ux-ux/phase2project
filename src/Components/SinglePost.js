@@ -1,12 +1,12 @@
 import React from 'react'
 import { Link } from "react-router-dom";
-import "./singlePost.css";
+import SinglePost from "./SinglePost"
 
-export default function SinglePost() {
+ function Singlepost() {
   return (
     <div className="singlePost">
       <div className="singlePostWrapper">
-        <img
+       < SinglePost/><img 
           className="singlePostImg"
           src="https://images.pexels.com/photos/6685428/pexels-photo-6685428.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
           alt=""
@@ -61,3 +61,4 @@ export default function SinglePost() {
     </div>
   );
 }
+export default Singlepost

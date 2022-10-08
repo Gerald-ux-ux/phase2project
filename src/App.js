@@ -6,14 +6,14 @@ import Register from "./Pages/Register";
 import Settings from "./Pages/Settings";
 import Single from "./Pages/Single";
 import Write from "./Pages/Write";
-import { BrowserRouter as Router, Routes, Route, } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
   const currentUser = true;
   return (
     <Router>
       <Topbar />
-      <Routes>
+      <Switch>
         <Route exact path="/">
           <Homepage />
         </Route>
@@ -28,8 +28,8 @@ function App() {
           <Single />
         </Route>
         <Route path="/Write">{currentUser ? <Write /> : <Login />}</Route>
-        <Route path="/ettings">{currentUser ? <Settings /> : <Login />}</Route>
-      </Routes>
+        <Route path="/Settings">{currentUser ? <Settings /> : <Login />}</Route>
+      </Switch>
     </Router>
   );
 }

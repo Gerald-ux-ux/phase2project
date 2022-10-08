@@ -1,51 +1,54 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './Topbar.css'
 
 
-const Topbar = () => {
+
+const Topbar = (user) => {
   return (
     <div className="top">
       <div className="topLeft">
         <i className="topIcon fab fa-instagram-square"></i>
-        <i class="fa-brands fa-youtube"></i>
+        <i className="fa-brands fa-youtube"></i>
       </div>
        <div className="topCenter">
         <ul className="topList">
           <li className="topListItem">
-            <a className="link" to="/">
+            <Link className="link" to="/">
               HOME
-            </a>
+            </Link>
           </li>
-          <li className="topListItem">ABOUT</li>
-          <li className="topListItem">CONTACT</li>
+          
+          {/* <li className="topListItem">ABOUT</li> */}
+          {/* <li className="topListItem">CONTACT</li> */}
           <li className="topListItem">
-            <a className="link" to="/Write">
+            <Link className="link" to="/Write">
               WRITE
-            </a>
+            </Link>
           </li>
           {user && <li className="topListItem">LOGOUT</li>}
         </ul>
       </div>
       <div className="topRight">
         {user ? (
-          <a className="link" to="/Settings">
+          <Link className="link" to="/Settings">
             <img
               className="topImg"
               src="https://images.pexels.com/photos/1858175/pexels-photo-1858175.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
               alt=""
             />
-          </a>
+          </Link>
         ) : (
           <ul className="topList">
             <li className="topListItem">
-              <a className="link" to="/Login">
+              <Link className="link" to="/Login">
                 LOGIN
-              </a>
+              </Link>
             </li>
             <li className="topListItem">
-              <a className="link" to="/Register">
+              <Link className="link" to="/Register">
                 REGISTER
-              </a>
+              </Link>
             </li>
           </ul>
         )}
