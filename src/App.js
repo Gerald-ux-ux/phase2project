@@ -1,12 +1,12 @@
-import React from 'react';
-import './App.css';
+import React from 'react'
+import Topbar from './Components/Topbar'
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-
+    <div>
+      <Topbar />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

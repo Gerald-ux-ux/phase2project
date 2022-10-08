@@ -1,9 +1,13 @@
+
 import React from 'react'
-import "./topbar.css";
+import './Topbar.css'
+
 
 const Topbar = () => {
   return (
-    <div>Topbar</div>
+    <div className='top'>
+      Topbar
+    </div>
   )
 }
 
