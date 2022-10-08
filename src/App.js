@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import Topbar from './Components/Topbar'
 import Homepage from './Pages/Homepage'
 import Login from "./Pages/Login";
@@ -9,7 +9,16 @@ import Write from "./Pages/Write";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
+   const [data, setData] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:8000/posts")
+      .then((response) => response.json())
+      .then((data) => console.log(data));
+  }, []);
+
   const currentUser = true;
+
   return (
     <Router>
       <Topbar />
