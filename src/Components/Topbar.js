@@ -26,7 +26,7 @@ const Topbar = (user) => {
               WRITE
             </Link>
           </li>
-          {user && <li className="topListItem">LOGOUT</li>}
+          {/* {user && <li className="topListItem">LOGOUT</li>} */}
         </ul>
       </div>
       <div className="topRight">
