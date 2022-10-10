@@ -13,18 +13,17 @@ export default function Homepage({ data }) {
   console.log(location);
   return (
     <div>
-      {data.length === 0 ? (
-        <h3></h3>
-      ) : (
-        data.map((blog, index) => {
-          return (
-            <div className="content" key={index}>
-              <p className="headerTitles">{blog.title}</p>
-              <p className="headerTitles">{blog.paragraph}</p>
-            </div>
-          );
-        })
-      )}
+
+      {data.map((blog, index) => {
+        return (
+          <div className="content" key={index}>
+            <p className="headerTitles">{blog.title}</p>
+            <p className="headerTitles">{blog.paragraph}</p>
+          </div>
+        );
+      })
+      }
+
 
       <Header />
       <div className="home">
