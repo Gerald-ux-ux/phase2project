@@ -14,32 +14,37 @@ function App() {
   useEffect(() => {
     fetch("http://localhost:8000/posts")
       .then((response) => response.json())
-      .then((data) => console.log(data));
+      .then((data) => setData(data));
   }, []);
+  console.log(data)
 
   const currentUser = true;
 
   return (
-    <Router>
-      <Topbar />
-      <Switch>
-        <Route exact path="/">
-          <Homepage />
-        </Route>
-        <Route path="/Posts">
-          <Homepage />
-        </Route>
-        <Route path="/Register">
-          {currentUser ? <Homepage /> : <Register />}
-        </Route>
-        <Route path="/Login">{currentUser ? <Homepage /> : <Login />}</Route>
-        <Route path="/Post/:id">
-          <Single />
-        </Route>
-        <Route path="/Write">{currentUser ? <Write /> : <Login />}</Route>
-        <Route path="/Settings">{currentUser ? <Settings /> : <Login />}</Route>
-      </Switch>
-    </Router>
+    <>
+      <Router>
+        <Topbar />
+        <Switch>
+          <Route exact path="/">
+            <Homepage data={data} />
+          </Route>
+          <Route path="/Posts">
+            <Homepage data={data} />
+          </Route>
+          <Route path="/Register">
+            {currentUser ? <Homepage /> : <Register />}
+          </Route>
+          <Route path="/Login">{currentUser ? <Homepage /> : <Login />}</Route>
+          <Route path="/Post/:id">
+            <Single />
+          </Route>
+          <Route path="/Write">{currentUser ? <Write /> : <Login />}</Route>
+          <Route path="/Settings">
+            {currentUser ? <Settings /> : <Login />}
+          </Route>
+        </Switch>
+      </Router>
+    </>
   );
 }
 

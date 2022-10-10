@@ -1,16 +1,16 @@
-import React from 'react'
+import React, { useState } from "react";
 import { useLocation } from "react-router";
 import Header from "../Components/Header";
-import Posts from '../Components/Posts'
+import Posts from "../Components/Posts";
 import Sidebar from "../Components/Sidebar";
 import "./Homepage.css";
-import "../Components/Header.css";
 
-export default function Homepage({ data }) {
-  console.log(data)
+export default function Homepage() {
+  const [data, setData] = useState([]);
 
   const location = useLocation();
   console.log(location);
+
   return (
     <div>
       {data.length === 0 ? (
@@ -19,8 +19,8 @@ export default function Homepage({ data }) {
         data.map((blog, index) => {
           return (
             <div className="content" key={index}>
-              <p className="headerTitles">{blog.title}</p>
-              <p className="headerTitles">{blog.paragraph}</p>
+              <p>{blog.title}</p>
+              <p>{blog.paragraph}</p>
             </div>
           );
         })
@@ -33,5 +33,4 @@ export default function Homepage({ data }) {
       </div>
     </div>
   );
-
 }
